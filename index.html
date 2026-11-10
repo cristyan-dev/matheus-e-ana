@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus & Ana Beatriz ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #f9dce5;
+    --pink-dark: #d88da7;
+    --pink-soft: #fff0f3;
+    --butter: #f9edb9;
+    --butter-dark: #e9d58b;
+    --cream: #fffaf0;
+    --text: #74505b;
+    --white: #fffdfb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--pink-soft);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #f9dce5, #f9edb9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: #a76d81;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 8vw, 82px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #a96880;
+}
+
+.hero h1 span {
+    display: block;
+    font-style: italic;
+    color: #c17d94;
+}
+
+.hero-description {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-date {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.55);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.main-button {
+    display: block;
+    margin: 35px auto 0;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 50px;
+    background: #fffaf0;
+    color: #a96880;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(160, 100, 120, 0.12);
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    background: white;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.65);
+    animation: float 7s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-35px) rotate(15deg);
+    }
+}
+
+section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 500;
+    text-align: center;
+    color: #a96880;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #98727e;
+}
+
+.counter-section {
+    background: var(--cream);
+    text-align: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 45px auto 20px;
+}
+
+.counter-item {
+    background: var(--pink);
+    min-width: 110px;
+    padding: 25px 15px;
+    border-radius: 18px;
+}
+
+.counter-item:nth-child(even) {
+    background: var(--butter);
+}
+
+.counter-item strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #a96880;
+}
+
+.counter-item span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.counter-note {
+    font-size: 13px;
+    margin-top: 25px;
+    color: #a17b86;
+}
+
+.gallery-section {
+    background: #fce7ed;
+}
+
+.gallery {
+    max-width: 950px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.photo-card {
+    background: var(--white);
+    padding: 12px 12px 22px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(130, 80, 100, 0.10);
+    transition: 0.3s;
+}
+
+.photo-card:nth-child(even) {
+    transform: translateY(25px);
+}
+
+.photo-card:hover {
+    transform: translateY(-6px) rotate(0deg);
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-card img:hover {
+    transform: scale(1.02);
+}
+
+.photo-card p {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+.letter-section {
+    background: var(--cream);
+}
+
+.letter {
+    max-width: 720px;
+    margin: 45px auto 0;
+    padding: 55px 45px;
+    background: linear-gradient(135deg, #fff0f3, #fff8df);
+    border: 1px solid #f1dce0;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(130, 80, 100, 0.08);
+}
+
+.letter h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: #b4758b;
+    margin-bottom: 25px;
+}
+
+.letter p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: #b4758b;
+    margin-top: 30px;
+}
+
+footer {
+    background: #f8dce4;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+footer span {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    display: block;
+    max-width: 95%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.lightbox span {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 75px 18px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .photo-card:nth-child(even) {
+        transform: none;
+    }
+
+    .letter {
+        padding: 35px 23px;
+    }
+
+    .counter {
+        gap: 10px;
+    }
+
+    .counter-item {
+        min-width: 95px;
+        padding: 20px 10px;
+    }
+
+    .counter-item strong {
+        font-size: 30px;
+    }
+
+    .photo-card img {
+        height: 500px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 85vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Um amor, uma história, nós dois</p>
+
+        <h1>
+            Matheus
+            <span>& Ana Beatriz</span>
+        </h1>
+
+        <p class="hero-description">
+            Dois anos de histórias, sorrisos, abraços e momentos
+            que se tornaram inesquecíveis.
+        </p>
+
+        <div class="hero-date">
+            20 DE NOVEMBRO DE 2024 ♡
+        </div>
+
+        <button class="main-button" onclick="abrirSurpresa()">
+            Uma surpresa para você ♡
+        </button>
+    </div>
+
+    <div class="heart" style="top:12%;left:10%;font-size:35px;">♡</div>
+    <div class="heart" style="top:25%;right:12%;font-size:55px;animation-delay:1s;">♥</div>
+    <div class="heart" style="bottom:15%;left:18%;font-size:45px;animation-delay:2s;">♡</div>
+    <div class="heart" style="bottom:12%;right:15%;font-size:30px;animation-delay:3s;">♥</div>
+</header>
+
+<section class="counter-section reveal" id="contador">
+    <h2 class="section-title">Nosso tempo juntos</h2>
+
+    <p class="section-subtitle">
+        Desde o dia em que nossas histórias se tornaram uma só.
+    </p>
+
+    <div class="counter">
+        <div class="counter-item">
+            <strong id="days">0</strong>
+            <span>Dias</span>
+        </div>
+
+        <div class="counter-item">
+            <strong id="hours">0</strong>
+            <span>Horas</span>
+        </div>
+
+        <div class="counter-item">
+            <strong id="minutes">0</strong>
+            <span>Minutos</span>
+        </div>
+
+        <div class="counter-item">
+            <strong id="seconds">0</strong>
+            <span>Segundos</span>
+        </div>
+    </div>
+
+    <p class="counter-note">
+        E que venham muitos outros capítulos dessa história. ♡
+    </p>
+</section>
+
+<section class="gallery-section reveal" id="fotos">
+    <h2 class="section-title">Nossas memórias ♡</h2>
+
+    <p class="section-subtitle">
+        Alguns registros de uma história que merece ser lembrada.
+    </p>
+
+    <div class="gallery">
+        <div class="photo-card">
+            <img src="foto1.jpg" alt="Foto de Matheus e Ana Beatriz">
+            <p>Um momento especial ♡</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="foto2.jpg" alt="Foto do casal">
+            <p>Meu lugar favorito</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="foto3.jpg" alt="Foto do casal">
+            <p>Mais uma lembrança linda</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="foto4.jpg" alt="Foto do casal">
+            <p>Com você, tudo é melhor ♡</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="foto5.jpg" alt="Foto do casal">
+            <p>Mais um momento nosso ♡</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="foto6.jpg" alt="Foto do casal">
+            <p>Que venham muitas outras lembranças</p>
+        </div>
+    </div>
+</section>
+
+<section class="letter-section reveal" id="carta">
+    <h2 class="section-title">Uma carta para você</h2>
+
+    <p class="section-subtitle">
+        Porque algumas coisas merecem ser ditas com o coração.
+    </p>
+
+    <div class="letter">
+        <h3>Minha Ana Beatriz, ♡</h3>
+
+        <p>
+            Hoje completamos dois anos de uma história que eu
+            nunca quero deixar de viver. Dois anos desde que
+            começamos a construir algo tão nosso, tão especial
+            e tão cheio de significado.
+        </p>
+
+        <p>
+            Talvez eu nunca consiga encontrar palavras suficientes
+            para explicar o quanto você significa para mim.
+            Mas quero que saiba que cada sorriso seu, cada abraço,
+            cada conversa e cada pequeno momento ao seu lado
+            fazem tudo valer a pena.
+        </p>
+
+        <p>
+            Obrigado por fazer parte da minha vida, por compartilhar
+            seus dias comigo e por transformar momentos simples
+            em lembranças que vou guardar para sempre.
+        </p>
+
+        <p>
+            Não prometo que todos os dias serão perfeitos,
+            mas prometo continuar escolhendo você, cuidando de nós
+            e fazendo o possível para que nossa história continue
+            sendo uma das coisas mais bonitas da minha vida.
+        </p>
+
+        <p>
+            Se eu pudesse voltar no tempo e escolher novamente,
+            escolheria você. Em cada versão da minha história,
+            em cada caminho e em cada oportunidade.
+        </p>
+
+        <p>
+            Feliz dois anos de nós dois.
+            Que esse seja apenas o começo de tudo aquilo
+            que ainda vamos viver juntos.
+        </p>
+
+        <div class="signature">
+            Com todo meu amor, Matheus. ❤️
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Você, eu e infinitos outros momentos. ♡</p>
+    <span>Matheus & Ana Beatriz · 20.11.2026</span>
+    <span>Feito com amor ❤️</span>
+</footer>
+
+
+<audio id="musica" src="505.mp3" loop preload="auto"></audio>
+
+
+<div class="lightbox" id="lightbox">
+    <span id="fecharLightbox">&times;</span>
+    <img id="fotoAmpliada" src="" alt="Foto ampliada do casal">
+</div>
+
+<script>
+
+
+const inicio = new Date(2024, 10, 20, 0, 0, 0);
+
+function atualizarContador() {
+    const agora = new Date();
+    let diferenca = agora - inicio;
+
+    if (diferenca < 0) diferenca = 0;
+
+    const segundosTotal = Math.floor(diferenca / 1000);
+
+    const dias = Math.floor(segundosTotal / 86400);
+    const horas = Math.floor((segundosTotal % 86400) / 3600);
+    const minutos = Math.floor((segundosTotal % 3600) / 60);
+    const segundos = segundosTotal % 60;
+
+    document.getElementById("days").textContent = dias;
+    document.getElementById("hours").textContent = horas;
+    document.getElementById("minutes").textContent = minutos;
+    document.getElementById("seconds").textContent = segundos;
+}
+
+atualizarContador();
+setInterval(atualizarContador, 1000);
+
+
+
+function abrirSurpresa() {
+    document.getElementById("carta").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+
+
+function criarCoracao() {
+    const coracao = document.createElement("div");
+
+    coracao.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+
+    coracao.style.position = "fixed";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.bottom = "-30px";
+    coracao.style.fontSize = (15 + Math.random() * 20) + "px";
+    coracao.style.color = "#d88da7";
+    coracao.style.opacity = "0.55";
+    coracao.style.pointerEvents = "none";
+    coracao.style.zIndex = "10";
+    coracao.style.transition = "transform 7s linear, opacity 7s linear";
+
+    document.body.appendChild(coracao);
+
+    requestAnimationFrame(() => {
+        coracao.style.transform =
+            `translateY(-${window.innerHeight + 80}px) rotate(35deg)`;
+
+        coracao.style.opacity = "0";
+    });
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 7000);
+}
+
+setInterval(criarCoracao, 1200);
+
+
+
+const fotos = document.querySelectorAll(".photo-card img");
+const lightbox = document.getElementById("lightbox");
+const fotoAmpliada = document.getElementById("fotoAmpliada");
+const fecharLightbox = document.getElementById("fecharLightbox");
+
+fotos.forEach(foto => {
+    foto.addEventListener("click", () => {
+        fotoAmpliada.src = foto.src;
+        fotoAmpliada.alt = foto.alt;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+});
+
+function fecharFoto() {
+    lightbox.classList.remove("active");
+    fotoAmpliada.src = "";
+    document.body.style.overflow = "";
+}
+
+fecharLightbox.addEventListener("click", fecharFoto);
+
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        fecharFoto();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("active")) {
+        fecharFoto();
+    }
+});
+
+
+
+const musica = document.getElementById("musica");
+
+musica.volume = 0.10;
+
+function iniciarMusica() {
+    musica.play().catch(() => {
+        
+    });
+}
+
+window.addEventListener("load", iniciarMusica);
+
+document.addEventListener("pointerdown", iniciarMusica, { once: true });
+document.addEventListener("keydown", iniciarMusica, { once: true });
+
+</script>
+
+</body>
+</html>
